@@ -2,7 +2,11 @@
 
 {%- for entry in cvSection -%}
 <div class="cv-entry">
-  <span class="cv-entry-name">{{entry.name}}</span>
+  <span class="cv-entry-name
+  {%- if include.oneline -%}
+    {{- }} oneline
+  {%- endif -%}
+  ">{{entry.name}}</span>
   {%- if entry.location -%}
     {{- }} <span class="cv-entry-location">({{entry.location}})</span>
   {%- endif -%}

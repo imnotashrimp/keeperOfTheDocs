@@ -46,6 +46,9 @@
   /* gradients */
   --gradient-mint: linear-gradient(to right, var(--primary-100), #01ffc8);
 
+  /* CV */
+  --cv-border-width: 50px;
+
   font-size: 18px;
 }
 
@@ -65,7 +68,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a, a:active, a:visited {
-  color: var(--accent-2-100);
+  color: var(--secondary-100);
   text-decoration: none;
   display: inline-block;
 }
@@ -76,7 +79,7 @@ a::after {
   width: 0;
   height: 3px;
   margin-top: -3px;
-  background: var(--accent-2-100);
+  background: var(--secondary-100);
   transition: width .3s;
 }
 
@@ -111,26 +114,50 @@ header a {
   display: flex;
   flex-direction: column;
   font-size: 16px;
+  border: var(--cv-border-width) solid;
+  border-top: 0;
+  border-bottom: 0;
+  border-image-source: var(--gradient-mint);
+  border-image-slice: 20;
+
 }
 
 #cv-container > div {
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: var(--cv-border-width);
+  padding-right: var(--cv-border-width);
 }
 
-#cv-head {
+#cv-header {
   background: var(--gradient-mint);
   display: flex;
   flex-wrap: wrap;
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 100%,
+    0 calc(100% - 4vw)
+  );
 }
 
-#cv-head a {
+#cv-footer {
+  background: var(--gradient-mint);
+  display: block;
+  height: 150px;
+  clip-path: polygon(
+    0 0,
+    100% calc(100% - 4vw),
+    100% 100%,
+    0 100%
+  );
+}
+
+#cv-header a {
   color: currentColor;
 }
 
-#cv-head > * {
-  margin-top: 20px;
-  margin-bottom: 20px;
+#cv-header > * {
+  margin-top: 50px;
+  margin-bottom: 7vw;
   align-self: flex-end;
 }
 
@@ -153,7 +180,6 @@ header a {
 
 #cv-contact-info {
   list-style-type: none;
-  font-size: .8em;
   columns: 2;
   column-gap: 50px;
 }
@@ -166,21 +192,20 @@ header a {
 #cv-body {
   margin-left: 0;
   margin-right: 0;
-  border: 50px solid;
-  border-top: 0;
-  border-image-source: var(--gradient-mint);
-  border-image-slice: 20;
   padding: 2em;
 }
 
+#cv-body h2:not(.first) {
+  margin-top: 50px;
+  margin-bottom: 0;
 }
 
-#cv-body h2 {
-  margin-top: 90px;
+#cv-body h2.first {
+  margin-top: -20px;
 }
 
 .cv-body-section {
-  max-width: 800px;
+  max-width: 700px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -191,17 +216,20 @@ header a {
 
 .cv-body-section h2 i {
   color: var(--primary-70);
-  display: inline-block;
-  margin-right: 15px;
+  display: block;
+  position: relative;
+  left: -50px;
+  top: 1.3rem;
 }
 
 .cv-company-info {
   font-size: 1.1rem;
   font-weight: 700;
+  border-bottom: 1px solid var(--text-light-gray);
 }
 
 .cv-company-info:not(:first-child) {
-  margin-top: 70px;
+  margin-top: var(--cv-border-width);
 }
 
 .cv-job-title {
@@ -209,7 +237,7 @@ header a {
   display: flex;
   justify-content: space-between;
   margin-left: 20px;
-  margin-top: 5px;
+  margin-top: 10px;
   margin-bottom: 0;
 }
 
@@ -218,7 +246,7 @@ header a {
 }
 
 .cv-location, .cv-start-end-dates, .cv-entry-location {
-  font-size: .8em;
+  font-size: .9em;
   font-weight: 400;
 }
 
@@ -228,8 +256,11 @@ header a {
   margin-top: 20px;
 }
 
+.cv-entry-name.oneline {
+  margin-top: 10px;
+}
+
 .cv-entry-item {
-  margin-left: 20px;
   display: block;
 }
 
@@ -239,5 +270,5 @@ header a {
 }
 
 .cv-bullets {
-  margin-top: 0px;
+  margin-top: 10px;
 }
