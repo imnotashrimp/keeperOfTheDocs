@@ -1,12 +1,11 @@
 ---
 layout: home
 header: false
+css: cv.css
 permalink: /
 ---
 
 {%- assign cv = site.data.cv -%}
-
-<div id="cv-container">
 
 <div id="cv-header">
 
@@ -29,7 +28,6 @@ permalink: /
 </div>
 
 <div id="cv-body">
-
   <div id="cv-experience" class="cv-body-section">
     <h2 class="first"><i class="fas fa-briefcase"></i> Experience </h2>
 
@@ -55,7 +53,9 @@ permalink: /
 
         <ul class="cv-bullets">
           {%- for i in p.items -%}
-            <li>{{i}}</li>
+            <li>
+              {%- include prevent_orphan.html str=i -%}
+            </li>
           {%- endfor -%}
         </ul>
       </div>
@@ -73,13 +73,13 @@ permalink: /
   <div id="cv-communities" class="cv-body-section">
     <h2><i class="fas fa-users"></i> Communities</h2>
 
-    {%- include cv_section.html section="communities" %}
+    {%- include cv_section.html section="communities" oneline=true %}
   </div>
 
   <div id="cv-awards" class="cv-body-section">
     <h2><i class="fas fa-certificate"></i> Awards</h2>
 
-    {%- include cv_section.html section="awards" %}
+    {%- include cv_section.html section="awards" oneline=true %}
   </div>
 
   <div id="cv-training" class="cv-body-section">
@@ -91,6 +91,4 @@ permalink: /
 </div>
 
 <div id="cv-footer">
-</div>
-
 </div>

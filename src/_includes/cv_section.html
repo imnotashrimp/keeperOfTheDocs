@@ -15,7 +15,9 @@
   {%- if include.oneline -%}
     {{- }} oneline
   {%- endif -%}
-  ">{{i}}</span>
+  ">
+    {%- include prevent_orphan.html str=i -%}
+  </span>
   {%- endfor -%}
 </div>
 {%- endfor -%}

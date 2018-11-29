@@ -15,10 +15,10 @@ experience:
         start-date: 2018
         end-date: present
         items:
-          - Create and develop content for <a href="https://docs.logz.io">Logz.io docs</a>, a collaborative website for managing docs
-          - Manage public <a href="https://docs.logz.io/api/">API documentation</a>
-          - Develop and maintain a <a href="https://github.com/logzio/logz-docs">custom built Jekyll template</a> for docs
-          - Write UI copy for new designs
+          - Create and develop content for <a href="https://docs.logz.io">Logz.io docs</a>, a collaborative website for managing docs.
+          - Manage public <a href="https://docs.logz.io/api/">API documentation</a>.
+          - Develop and maintain a <a href="https://github.com/logzio/logz-docs">custom built Jekyll template</a> for docs.
+          - Write UI copy for new designs.
   - company: Philips Color Kinetics
     location: USA
     website: http://www.colorkinetics.com
@@ -27,11 +27,11 @@ experience:
         start-date: 2015
         end-date: 2017
         items:
-          - Simplified complex concepts and wrote concise content
-          - Primary technical writer for software, SaaS, and controls
-          - Authored marketing content for new products
-          - Created clear, concise UI copy
-          - Improved user experience by proposing changes to UI and workflow
+          - Simplified complex concepts and wrote concise content.
+          - Primary technical writer for software, SaaS, and controls.
+          - Authored marketing content for new products.
+          - Created clear, concise UI copy.
+          - Improved user experience by proposing changes to UI and workflow.
   - company: Sovos Compliance
     location: USA
     website: https://sovos.com
@@ -40,14 +40,14 @@ experience:
         start-date: 2015
         end-date: 2015
         items:
-          - Created live online training workshops to teach users configuration of Taxware Enterprise tax calculation software
-          - Trained Professional Services and Customer Support departments
+          - Created live online training workshops to teach users configuration of Taxware Enterprise tax calculation software.
+          - Trained Professional Services and Customer Support departments.
       - title: Technical Writer, Software
         start-date: 2013
         end-date: 2015
         items:
-          - Authored online help, API documentation, user guides, and release notes for SaaS and on-premise software
-          - Created technical writing style guide
+          - Authored online help, API documentation, user guides, and release notes for SaaS and on-premise software.
+          - Created technical writing style guide.
   - company: Our Best Words
     location: Israel
     positions:
@@ -76,9 +76,10 @@ skills:
 communities:
   - name: Write the Docs
     items:
-      - Member, Slack community
-      - Co-organizer, Tel Aviv meetups
-      - Presented on <a href="https://github.com/imnotashrimp/presentations/blob/master/2018-10-31_writeTheDocsTLV_docs-as-code-at-logzio/docs-as-code-at-logzio.pdf">docs-as-code at Logz.io</a>
+      - Active Slack community member, Tel Aviv meetups co-organizer. Presented on <a href="https://github.com/imnotashrimp/presentations/blob/master/2018-10-31_writeTheDocsTLV_docs-as-code-at-logzio/docs-as-code-at-logzio.pdf">docs-as-code</a> at Logz.io.
+  - name: Content + UX
+    items:
+      - Active Slack community member.
 
 awards:
   - name: Luminary Award
@@ -91,10 +92,10 @@ training:
       - Blockchain Basics
       - 'Blockchain: Beyond the Basics'
   - name: Our Best Words
-    location: Israel
+    location: 2012, Israel
     items:
       - Technical Writing/Marcom Workshop
   - name: University of Massachusetts, Amherst
-    location: USA
+    location: 2011, USA
     items:
       - BA, Early Care and Education
