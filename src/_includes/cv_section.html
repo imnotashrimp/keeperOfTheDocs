@@ -1,0 +1,23 @@
+{%- assign cvSection = cv.[include.section] -%}
+
+{%- for entry in cvSection -%}
+<div class="cv-entry">
+  <span class="cv-entry-name
+  {%- if include.oneline -%}
+    {{- }} oneline
+  {%- endif -%}
+  ">{{entry.name}}</span>
+  {%- if entry.location -%}
+    {{- }} <span class="cv-entry-location">({{entry.location}})</span>
+  {%- endif -%}
+  {%- for i in entry.items -%}
+  <span class="cv-entry-item
+  {%- if include.oneline -%}
+    {{- }} oneline
+  {%- endif -%}
+  ">
+    {%- include prevent_orphan.html str=i -%}
+  </span>
+  {%- endfor -%}
+</div>
+{%- endfor -%}

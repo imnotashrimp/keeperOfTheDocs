@@ -1,0 +1,211 @@
+@import url('vars.css'); /* import CSS variables */
+
+:root {
+    --cv-border-width: 10px;
+    --cv-bullet-padding-left: 20px;
+}
+
+/* Tablets, at least 760px wide */
+@media screen and (min-width: 760px) {
+  :root {
+    --cv-bullet-padding-left: 40px;
+  }
+
+  body #cv-titles {
+    margin-top: 7vw;
+  }
+
+  body #cv-contact-info {
+    columns: 2;
+    column-gap: 50px;
+  }
+
+  body .cv-location,
+  body .cv-start-end-dates,
+  body .cv-entry-location {
+    margin-left: 10px;
+    display: inline-block;
+  }
+
+  body .cv-entry-item.oneline {
+    display: inline;
+  }
+
+}
+
+/* Laptops */
+@media screen and (min-width: 1024px) {
+  :root {
+    --cv-border-width: 50px;
+  }
+
+  body #cv-header {
+    padding-top: 0;
+  }
+
+  body #cv-body {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  :root {
+    --cv-border-width: 100px;
+  }
+
+  html body {
+    font-size: 24px;
+  }
+  body #cv-footer {
+    height: 150px;
+  }
+}
+
+/* ===== CV ===== */
+
+body {
+  font-size: 18px;
+  border-left: var(--cv-border-width) solid;
+  border-right: var(--cv-border-width) solid;
+  border-top: 0;
+  border-bottom: 0;
+  border-image-source: var(--gradient-mint);
+  border-image-slice: 20;
+}
+
+#cv-header {
+  padding-top: var(--cv-border-width);
+  padding-left: 1em;
+  padding-right: 1em;
+  background: var(--gradient-mint);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-evenly;
+  padding-bottom: 7vw;
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 100%,
+    0 calc(100% - 4vw)
+  );
+}
+
+#cv-footer {
+  padding-bottom: var(--cv-border-width);
+  background: var(--gradient-mint);
+  display: block;
+  margin-top: 50px;
+  height: 50px;
+  clip-path: polygon(
+    0 0,
+    100% calc(100% - 4vw),
+    100% 100%,
+    0 100%
+  );
+}
+
+#cv-header a {
+  color: currentColor;
+}
+
+#cv-titles {
+  display: flex;
+  flex-direction: column;
+  padding-right: 20px;
+}
+
+#cv-titles h1 {
+  font-size: 3em;
+  margin-bottom: unset;
+  line-height: 1em;
+  color: white;
+}
+
+#cv-subtitle {
+  font-size: 1.3em;
+}
+
+#cv-contact-info {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 0;
+  font-size: 1em;
+}
+
+#cv-contact-info i {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+#cv-body {
+  margin-left: 1em;
+  margin-right: 1em;
+  max-width: 700px;
+}
+
+h2:not(.first) {
+  margin-top: 50px;
+  margin-bottom: 0;
+}
+
+h2.first {
+  margin-top: 20px;
+}
+
+.cv-body-section h2 {
+  color: var(--primary-100);
+}
+
+.cv-company-info {
+  font-size: 1.1em;
+  font-weight: 700;
+  border-bottom: 1px solid var(--text-medium-gray);
+}
+
+.cv-company-info:not(:first-child) {
+  margin-top: var(--cv-border-width);
+}
+
+.cv-job-title {
+  font-weight: 700;
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+.cv-location, .cv-entry-location {
+   font-style: italic;
+}
+
+.cv-location, .cv-start-end-dates, .cv-entry-location {
+  font-size: .9em;
+  font-weight: 400;
+  display: block;
+}
+
+.cv-entry-name {
+  font-weight: 700;
+  display: inline-block;
+  margin-top: 20px;
+}
+
+.cv-entry-name.oneline {
+  margin-top: 10px;
+  margin-right: 25px;
+}
+
+.cv-entry-item {
+  display: block;
+}
+
+.cv-entry-item.oneline {
+  display: block;
+}
+
+.cv-bullets {
+  margin-top: 10px;
+  padding-left: var(--cv-bullet-padding-left);
+}

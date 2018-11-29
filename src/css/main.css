@@ -1,0 +1,23 @@
+@import url('vars.css'); /* import CSS variables */
+
+/* ===== HEADER ===== */
+header {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  background: var(--gradient-mint);
+}
+
+header a {
+  color: currentColor;
+  border-bottom: 3px solid white;
+}
+
+.site-title {
+  margin-right: auto;
+  font-size: 2em;
+}
+
+.site-nav {
+  margin-left: auto;
+}

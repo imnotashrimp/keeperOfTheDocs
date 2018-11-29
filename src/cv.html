@@ -1,0 +1,94 @@
+---
+layout: home
+header: false
+css: cv.css
+permalink: /
+---
+
+{%- assign cv = site.data.cv -%}
+
+<div id="cv-header">
+
+  <div id="cv-titles">
+    <h1> {{cv.heading}} </h1>
+
+    <div id="cv-subtitle">
+      {{cv.subheading}}
+    </div>
+  </div>
+
+
+  <ul id="cv-contact-info">
+    <li> <i class="fas fa-phone"></i> <a href="tel:{{cv.contact-info.phone}}">{{cv.contact-info.phone}}</a> </li>
+    <li> <i class="far fa-envelope"></i> <a href="mailto:{{cv.contact-info.github}}">{{cv.contact-info.email}}</a> </li>
+    <li> <i class="fab fa-github"></i> <a href="https://github.com/{{cv.contact-info.github}}">{{cv.contact-info.github}}</a> </li>
+    <li> <i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/{{cv.contact-info.linkedin}}">linkedin.com/in/sboroda</a> </li>
+  </ul>
+
+</div>
+
+<div id="cv-body">
+  <div id="cv-experience" class="cv-body-section">
+    <h2 class="first"><i class="fas fa-briefcase"></i> Experience </h2>
+
+    <div class="cv-company">
+      {%- for e in cv.experience %}
+      <div class="cv-company-info">
+        {{e.company}}
+        <span class="cv-location">({{e.location}}
+        {%- if e.website -%}
+          , <a href="{{e.website}}">{{ e.website | split: "://" | last }}</a>
+        {%- endif -%}
+        )</span>
+      </div>
+
+      {%- for p in e.positions -%}
+      <div class="cv-entry">
+        <div class="cv-job-title">
+          {{p.title}}
+          <span class="cv-start-end-dates">
+            {{p.start-date}} &ndash; {{p.end-date | default: ""}}
+          </span>
+        </div>
+
+        <ul class="cv-bullets">
+          {%- for i in p.items -%}
+            <li>
+              {%- include prevent_orphan.html str=i -%}
+            </li>
+          {%- endfor -%}
+        </ul>
+      </div>
+      {%- endfor -%}
+      {%- endfor -%}
+    </div>
+  </div>
+
+  <div id="cv-skills" class="cv-body-section">
+    <h2><i class="fas fa-wrench"></i> Skills</h2>
+
+    {%- include cv_section.html section="skills" oneline=true %}
+  </div>
+
+  <div id="cv-communities" class="cv-body-section">
+    <h2><i class="fas fa-users"></i> Communities</h2>
+
+    {%- include cv_section.html section="communities" oneline=true %}
+  </div>
+
+  <div id="cv-awards" class="cv-body-section">
+    <h2><i class="fas fa-certificate"></i> Awards</h2>
+
+    {%- include cv_section.html section="awards" oneline=true %}
+  </div>
+
+  <div id="cv-training" class="cv-body-section">
+    <h2><i class="fas fa-graduation-cap"></i> Training</h2>
+
+    {%- include cv_section.html section="training" %}
+  </div>
+
+</div>
+
+<div id="cv-footer">
+</div>

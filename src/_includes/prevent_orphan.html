@@ -1,0 +1,9 @@
+{%- comment -%}
+*   Prevent orphans by replacing last space in the string with a
+*   non-breaking space.
+*
+*   Usage:
+*   Pass `str` (a string) to this include. Returns the string with last space
+*   replaced with `&nbsp;`.
+*         {%- endcomment -%}
+{{- include.str | split: "" | reverse | join: "" | replace_first: " ", ";psbn&" | split: "" | reverse -}}
